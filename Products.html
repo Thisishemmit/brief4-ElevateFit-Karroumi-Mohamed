@@ -60,11 +60,21 @@
             <h2>All Products
 
             </h2>
-            <select onchange="sort(this.value)">
-                <option value="id">Default Sorting</option>
-                <option value="price">Sort by Price</option>
-                <option value="rating">Sort by Popularity</option>
-            </select>
+            <div class="flex items-end justify-center gap-10">
+                <div class="price-filter flex justify-start items-center">
+                    <button>
+                        <i class="fas fa-filter"></i>
+                    </button>
+                    <div class="price-select">
+
+                    </div>
+                </div>
+                <select onchange="sort(this.value)">
+                    <option value="id">Default Sorting</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="rating">Sort by Popularity</option>
+                </select>
+            </div>
         </div>
 
 
