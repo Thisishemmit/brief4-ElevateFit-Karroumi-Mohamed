@@ -1,7 +1,7 @@
 *{                              /* "*" is used for all elements in your website*/
-    margin:0;               
+    margin:0;
     padding:0;
-    box-sizing: border-box;     /*box sizing: border-box is used to add padding and border in both width and heghts.*/ 
+    box-sizing: border-box;     /*box sizing: border-box is used to add padding and border in both width and heghts.*/
 
 }
 body{
@@ -44,7 +44,7 @@ p{
 .row{
     display: flex;/*flexible content*/
     align-items: center;
-    flex-wrap: wrap;/*wrap place single line or multi lines in given space.*/ 
+    flex-wrap: wrap;/*wrap place single line or multi lines in given space.*/
     justify-content: space-around;/*"Display the flex items with space before, between, and after the lines:"*/
 }
 .col-2{
@@ -142,7 +142,7 @@ h4{
     font-weight: normal;
 }
 /*for products price*/
-.col-4 p{    
+.col-4 p{
     font-size: 14px;
 }
 /*change color of rating stars -> .rating for rating class and .fa for icons*/
@@ -151,7 +151,7 @@ h4{
 }
 /*hover effect to feature products images*/
 .col-4:hover{
-    transform: translateY(-5px);/*hover effect to col-4 which contain 4 images of featured products and image move in y direction when hover*/ 
+    transform: translateY(-5px);/*hover effect to col-4 which contain 4 images of featured products and image move in y direction when hover*/
 }
 /*offer section*/
 
@@ -161,7 +161,7 @@ h4{
     padding: 30px;
 }
 .col-2 .offer-img{
-    padding: 50px;   
+    padding: 50px;
 }
 small{
     color: #555;
@@ -293,7 +293,7 @@ ul{
         /* transition: max-Height 0.5s;this will make dropdown menu to open with little bit delay and make it stylish */
         display: inline-block;
         list-style-type: none;
-   
+
     }
     nav ul li{/*for home contacts etc*/
         display: block;
@@ -307,7 +307,7 @@ ul{
     }
     .menu-icon{/*we again call menu icon in smaller screen, before smaller screen, we set display none, means initially it was not visible for any screen, but now it will be visible for smaller screens as we set display to block*/
         display:block;
-        cursor: pointer; 
+        cursor: pointer;
     }
 
 }
@@ -321,7 +321,7 @@ select{
     padding: 5px;
 }
 select:focus{
-    outline: none;/*the issue was when create red border above, it shows red border but upon selecting other option it again becomes black, so we set outline none upon clicking and for clicking or tabing, focus is used*/ 
+    outline: none;/*the issue was when create red border above, it shows red border but upon selecting other option it again becomes black, so we set outline none upon clicking and for clicking or tabing, focus is used*/
 }
 .page-btn{
     margin: 0 auto 80px;
@@ -332,7 +332,7 @@ select:focus{
     margin-left: 10px;
     width: 40px;
     height: 40px;
-    text-align: center;  
+    text-align: center;
     line-height: 40px;
     cursor: pointer;
 }
@@ -360,7 +360,7 @@ select:focus{
 .single-product h4{
     margin: 20px 0;
     font-size: 22px;
-    font-weight: bold; 
+    font-weight: bold;
 
 }
 
@@ -495,14 +495,13 @@ form .btn{
     width: 100%;
     border: none;
     cursor: pointer;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 form .btn:focus{
     outline: none;
 }
 #LoginForm{
     left: -300px;
-     
 }
 #RegForm{
     left: 0;
@@ -520,9 +519,48 @@ form a{
     transition: transform 1s;
 }
 
+.flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
 
+.justify-start{
+    justify-content: flex-start;
+}
 
+.justify-between{
+    justify-content: space-between;
+}
 
+.justify-around{
+    justify-content: space-around;
+}
+
+.justify-end{
+    justify-content: flex-end;
+}
+
+.items-center{
+    align-items: center;
+}
+
+.items-end{
+    align-items: flex-end;
+}
+
+.h-full{
+    height: 100%;
+}
+
+.w-40{
+    width: 40px;
+}
+
+.bg-test{
+    background: #ff523b;
+}
 
 
 
