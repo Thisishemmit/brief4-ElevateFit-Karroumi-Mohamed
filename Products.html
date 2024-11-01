@@ -39,7 +39,7 @@
 
             <ul class="menu-bar">
 
-                <li>&#36;0.00</li>
+                <li id="total-price">&#36;0.00</li>
                 <li><i class='fas fa-shopping-cart'></i></li>
 
             </ul>
@@ -54,44 +54,58 @@
 
 
     <div class="small container">
-
-
         <div class="row row-2">
-            <h2>All Products
+            <h2>All Products</h2>
 
-            </h2>
-            <div class="flex items-center justify-center gap-10">
-                <div class="price-filter h-full flex bg-test flex-col justify-start items-center">
-                    <button style="height: 100%;">
+            <div class="filter-sort">
+
+                <!-- Price Filter Button -->
+                <div class="filter-group compact-filter">
+                    <button onclick="togglePricePopUP()" class="price-filter-btn">
                         <i class="fas fa-filter"></i>
                     </button>
-                    <div class="price-select absolute">
-                        <input type="number" placeholder="Min Price" class="min-price">
-                        <input type="number" placeholder="Max Price" class="max-price">
-                        <button onclick="filterPrice()">Filter</button>
-
+                    <!-- Price Filter Popup (Initially Hidden) -->
+                    <div class="price-filter-popup hidden">
+                        <div class="price-inputs">
+                            <input class="min-price" type="number" placeholder="Min Price">
+                            <input class="max-price" type="number" placeholder="Max Price">
+                        </div>
+                        <button onclick="UpdateProds()" class="apply-filter-btn">Apply Filter</button>
                     </div>
                 </div>
-                <select onchange="sort(this.value)">
-                    <option value="id">Default Sorting</option>
-                    <option value="price">Sort by Price</option>
-                    <option value="rating">Sort by Popularity</option>
-                </select>
+
+                <!-- Category Filter Select -->
+                <div class="filter-group">
+                    <select class="cat-select" onchange="UpdateProds()">
+                        <option value="all">All Categories</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                    </select>
+                </div>
+                <!-- Sort Select -->
+                <div class="filter-group">
+                    <select class="sort-select" onchange="UpdateProds()">
+                        <option value="default">Default Sorting</option>
+                        <option value="price">Sort by Price</option>
+                        <option value="popularity">Sort by Popularity</option>
+                    </select>
+                </div>
             </div>
         </div>
+    </div>
 
 
-        <div class="row prods">
-        </div>
+    <div class="row prods">
+    </div>
 
-        <div class="page-btn">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>&#8594;</span>
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
 
-        </div>
+    </div>
     </div>
 
     <!-------footer------->
@@ -150,24 +164,13 @@
 
     <script src="js/getProds.js"> </script>
     <script src="js/populate.js"> </script>
+    <script src="js/filterSort.js"></script>
+    <script src="js/script.js"></script>
     <script>
         const target = document.querySelector('.prods');
+        setPriceRange(0, 1000);
         populateProduct(target);
-        let prods = products;
-        function sort(type) {
-            console.log(type);
-            console.log(prods);
-            const sorted = prods.sort((a, b) => {
-                if (type === 'id') {
-                    return a.id - b.id;
-                } else if (type === 'price') {
-                    return a.price - b.price;
-                } else if (type === 'rating') {
-                    return b.rating - a.rating;
-                }
-            });
-            populateProduct(target, sorted.map(prod => prod.id));
-        }
+
     </script>
 </body>
 

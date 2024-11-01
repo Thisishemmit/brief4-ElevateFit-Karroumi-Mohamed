@@ -2,6 +2,11 @@
 function createDiv(prod) {
     const div = document.createElement('div');
     div.classList.add('col-4', 'prod');
+    div.setAttribute('data-id', prod.id);
+    div.onclick = function () {
+        localStorage.setItem('selectedProd', JSON.stringify(prod));
+        window.location.href = 'product-detail.html';
+    }
     const img = document.createElement('img');
     img.src = prod.img;
     const h4 = document.createElement('h4');
@@ -38,15 +43,13 @@ function createDiv(prod) {
 
 const products = JSON.parse(localStorage.getItem('products'));
 
-function populateProduct(target, prods = products.map(p => p.id)) {
+function populateProduct(target, prods = products) {
     while (target.firstChild) {
         target.removeChild(target.firstChild);
     }
 
-    prods.forEach(prodId => {
-        const product = products.find(p => p.id === prodId);
-        if (product) {
-            target.appendChild(createDiv(product));
-        }
+    prods.forEach(prod => {
+        const div = createDiv(prod);
+        target.appendChild(div);
     });
 }

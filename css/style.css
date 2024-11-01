@@ -70,6 +70,7 @@ p{
     background-color: #ff523b;
     color: #fff;
     padding: 8px 30px;
+    border: none;
     margin: 30px 0;
     margin-left: 25px;
     border-radius: 30px;
@@ -519,54 +520,58 @@ form a{
     transition: transform 1s;
 }
 
-.flex{
+.filter-sort {
     display: flex;
-}
-.justify-center{
-    justify-content: center;
+    gap: 20px;
 }
 
-.justify-start{
-    justify-content: flex-start;
+.filter-sort .filter-group {
+    display: flex;
+    gap: 10px;
 }
 
-.justify-between{
-    justify-content: space-between;
-}
-
-.justify-around{
-    justify-content: space-around;
-}
-
-.justify-end{
-    justify-content: flex-end;
-}
-
-.items-center{
+.compact-filter {
+    position: relative;
+    display: flex;
     align-items: center;
 }
 
-.items-end{
-    align-items: flex-end;
-}
-
-.h-full{
-    height: 100%;
-}
-
-.w-40{
-    width: 40px;
-}
-
-.bg-test{
+.compact-filter .price-filter-btn {
     background: #ff523b;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.compact-filter .price-filter-popup {
+    position: absolute;
+    top: calc(100% + 10px);
+    transform: translateX(-50%);
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.compact-filter .price-inputs {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
 }
 
 
+.flex {
+    display: flex;
+    background: #f5f5f5;
+}
 
-
-
-
+.hidden {
+    display: none;
+}
 
 
 /*----------media query for each and every item display on mobile or screen size less than 600px---------------*/
