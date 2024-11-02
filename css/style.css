@@ -26,10 +26,11 @@ nav ul li{
     display: inline-block;
     margin-right:20px;
 }
+
 /*for menu links*/
 a{
     text-decoration: none;
-    color:#555;
+    color:#fff;
 }
 p{
     color:#555;
@@ -600,4 +601,54 @@ form a{
         display:none;/*hide product name in smaller screen*/
     }
 
+}
+
+.card {
+    display: grid;
+    grid-template-columns: 60% 1fr auto;
+    padding: 40px;
+    max-width: 1420px;
+    margin: 0 auto;
+}
+.card .header {
+    background: red;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+.card .header p {
+    color: #fff;
+}
+.card .product {
+    height: 130px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.card .product img {
+    height: 100%;
+}
+
+.card .product .product-desc {
+    font-size: 20px;
+}
+.card .product .product-desc button {
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.card .quantity {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.card .quantity input {
+    height: 40px;
+    width: 60px;
+    font-size: 16px;
+    padding: 0 5px;
 }

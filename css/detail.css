@@ -7,25 +7,25 @@
     transition:all .1s;
     user-select:none;
   }
-  
-  
+
+
   /*--color shotcut--*/
   :root {
     --orange:#ff523b;
     --white:#fff;
   }
-  
-  
+
+
   body{
     font-family: 'Roboto', sans-serif;
     overflow-x:hidden;
   }
-  
-  
-  
-  
- 
-  
+
+
+
+
+
+
   header nav{
     background:rgb(0 0 0 / 30%);
     color:var(--white);
@@ -40,17 +40,17 @@
     z-index: 122;
     background-color: rgb(7, 7, 7);
   }
-  
+
   header nav .fa-bars,
   header nav .fa-remove{
     display:none;
   }
-  
+
   header nav img{
     margin-right: 3em;
     width:120px;
   }
-  
+
   header nav ul{
     display:flex;
     justify-content:center;
@@ -59,41 +59,42 @@
     height:100%;
     text-transform:uppercase;
   }
-  
+
   header nav ul li{
     cursor:pointer;
   }
-  
-  header nav ul li:hover{
+
+  header nav ul li:hover,
+  header nav ul li a:hover{
     color:#ff523b;
   }
-  
-  
+
+
   header nav ul:nth-child(2){
     height:auto;
   }
-  
-  
+
+
   header nav ul:nth-child(3){
     position:absolute;
     top:0%;
     right:30px;
     font-weight:100;
   }
-  
-  
- 
-  
+
+
+
+
   /*---- media queary min--0px & max--599px ----*/
-  
+
   @media (min-width: 0px) and (max-width:599px) {
-    
-    
+
+
     header{
       background-position:center;
       background-size: cover;
     }
-    
+
     header nav ul:nth-child(2){
       background:rgba(0, 52, 82,.15);
       color:var(--white);
@@ -107,7 +108,7 @@
       left:-162px;
       top:92px;
     }
-    
+
     header nav ul:nth-child(2):after{
       content:"\27A7";
       position:absolute;
@@ -116,11 +117,11 @@
       font-size:2em;
       cursor:pointer;
     }
-    
+
     header nav ul:nth-child(2):after:hover{
       color:#ff523b;
     }
-    
+
     header nav ul:nth-child(3){
       background:rgba(0, 52, 82,.15);
       color:var(--white);
@@ -133,20 +134,20 @@
       text-align:center;
       transition:all .5s;
     }
-    
-    
+
+
     header nav ul:nth-child(3) li{
       margin:5px 0;
     }
-    
+
     header nav ul:nth-child(3) li:nth-child(1){
       margin-top:30px;
     }
-    
+
     header nav ul:nth-child(3) li:nth-child(5){
       margin-bottom:30px;
     }
-    
+
     header nav .fa-bars,
     header nav .fa-remove{
       display:block;
@@ -157,13 +158,13 @@
       font-size:2em;
       cursor:pointer;
     }
-    
+
     header nav .fa-bars:hover,
     header nav .fa-remove:hover{
       color:#ff523b;
     }
-    
-    
-   
-    
+
+
+
+
   }
