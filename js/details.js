@@ -1,10 +1,3 @@
-/* <div class="small-img-col">
-                        <img src="images/gallery-1.jpg" width="100%" class="small-img">
-                    </div> */
-
-/* <p id="product-category">Home/</p>
-<h1 id="product-name"></h1>
-<h4 id="product-price"></h4> */
 
 const ProductImg = document.getElementById("product-img");//larger image
 const ProductName = document.getElementById("product-name");

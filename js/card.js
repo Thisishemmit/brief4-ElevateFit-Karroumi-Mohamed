@@ -49,3 +49,6 @@ function addProductToCart() {
     updateTotalPrice();
 }
 
+
+
+
