@@ -708,6 +708,7 @@ form a {
 }
 
 .compact-filter .price-filter-popup {
+    z-index: 20;
     position: absolute;
     top: calc(100% + 10px);
     transform: translateX(-50%);
