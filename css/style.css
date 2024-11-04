@@ -740,7 +740,7 @@ form a {
 
 /*----------media query for each and every item display on mobile or screen size less than 600px---------------*/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 860px) {
 
     .row {
         /*this is the row which we have used in every section*/
@@ -891,4 +891,94 @@ form a {
     padding: 20px;
     max-width: 1420px;
     margin: 0 auto;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+@media screen and (max-width: 860px) {
+    .menu-bar-side {
+        display: none;
+    }
+    .menu-bar {
+        display: none;
+    }
+    nav {
+        justify-content: space-between;
+    }
+    .menu-hamburger {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        float: right;
+    }
+}
+.hidden {
+    display: none;
+}
+
+.flex {
+    display: flex;
+}
+
+.mobile-nav {
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    background: rgb(7, 7, 7);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    backdrop-filter: blur(5px);
+}
+.mobile-nav .exit {
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+.mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-nav li {
+    width: 100%;
+    padding: 10px 0;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (min-width:  860px) {
+    .mobile-nav {
+        display: none;
+    }
+    .menu-hamburger {
+        display: none;
+    }
 }

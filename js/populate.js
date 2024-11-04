@@ -68,8 +68,15 @@ function createDiv(prod) {
     wishlistBtn.setAttribute('data-id', prod.id);
 
     const heartIcon = document.createElement('i')
-    heartIcon.classList.add('fa', 'fa-heart');
+    const outLineHeartIcon = document.createElement('i');
+    outLineHeartIcon.classList.add('fa', 'fa-heart-o', 'wish');
+    heartIcon.classList.add('fa', 'fa-heart', 'wished');
     wishlistBtn.appendChild(heartIcon);
+    wishlistBtn.appendChild(outLineHeartIcon);
+    wishlistBtn.addEventListener('click', function(event) {
+        event.stopPropagation(); // This prevents the click from bubbling up to the parent div
+        toggleWishlist(prod.id);
+    });
 
     addToCartDiv.appendChild(wishlistBtn);
     div.appendChild(divImg);
@@ -94,8 +101,6 @@ function populateProduct(target, prods = products) {
     });
 }
 
-const target = document.querySelector('.prods');
-populateProduct(target);
 
 function checkForAddabilty(){
     console.log('checking for addability');
@@ -147,3 +152,39 @@ function addToCardFromProducts(id) {
 }
 
 checkForAddabilty();
+
+function toggleWishlist(id) {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const selectedProduct = products.find(prod => prod.id === id);
+    const found = wishlist.find(prod => prod.id === id);
+    if (found) {
+        wishlist.forEach((prod, index) => {
+            if (prod.id === id) {
+                wishlist.splice(index, 1);
+            }
+        });
+    } else {
+        wishlist.push(selectedProduct);
+    }
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+    populateProduct(target);
+    checkForWishlist();
+}
+
+function checkForWishlist() {
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const wishlistBtn = document.querySelectorAll('.btn-wishlist');
+    wishlistBtn.forEach(btn => {
+        const id = parseInt(btn.getAttribute('data-id'));
+        const found = wishlist.find(prod => prod.id === id);
+        if (found) {
+            btn.querySelector('.fa-heart-o').style.display = 'none';
+            btn.querySelector('.fa-heart').style.display = 'block';
+        } else {
+            btn.querySelector('.fa-heart-o').style.display = 'block';
+            btn.querySelector('.fa-heart').style.display = 'none';
+        }
+    });
+    checkForAddabilty();
+}
+checkForWishlist();

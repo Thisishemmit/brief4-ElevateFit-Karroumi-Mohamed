@@ -171,10 +171,13 @@
     <script src="js/populate.js"> </script>
     <script src="js/filterSort.js"></script>
     <script src="js/script.js"></script>
-<!--  import module file-->
+    <!--  import module file-->
 
     <script>
         setPriceRange(0, 1000);
+        const target = document.querySelector('.prods');
+        populateProduct(target);
+        checkForWishlist();
     </script>
 </body>
 
